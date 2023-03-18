@@ -7,6 +7,7 @@ import { config } from "../App";
 import Footer from "./Footer";
 import Header from "./Header";
 import "./Register.css";
+import { useHistory, Link } from "react-router-dom";
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -19,8 +20,8 @@ const Register = () => {
 
   const { enqueueSnackbar } = useSnackbar();
 
+  const history = useHistory();
 
-  // TODO: CRIO_TASK_MODULE_REGISTER - Implement the register function
   /**
    * Definition for register handler
    * - Function to be called when the user clicks on the register button or submits the register form
@@ -55,6 +56,7 @@ const Register = () => {
         const response = await axios.post(`${config.endpoint}/auth/register`,credentials);
         // console.log(response);
         enqueueSnackbar("Registered successfully",{variant:"success"});
+        history.push("/login", {from: "Register"});
       }
       catch(error){
           try{
@@ -169,9 +171,9 @@ const Register = () => {
            </Button>}
           <p className="secondary-action">
             Already have an account?{" "}
-             <a className="link" href="#">
+            <Link to="/login">
               Login here
-             </a>
+            </Link>
           </p>
         </Stack>
       </Box>
