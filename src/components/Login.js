@@ -57,7 +57,7 @@ const Login = () => {
     if(validateInput(formData)){
       try{
         let response = await axios.post(`${config.endpoint}/auth/login`,credentials)
-        console.log(response);
+        // console.log(response);
         persistLogin(response.data.token, response.data.username, response.data.balance);
         enqueueSnackbar("Logged in successfully", {variant:"success"})
         history.push("/",{from: "Login"})

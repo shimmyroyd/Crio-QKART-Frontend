@@ -11,7 +11,7 @@ import {
 import React from "react";
 import "./ProductCard.css";
 
-const ProductCard = ({ product, handleAddToCart }) => {
+const ProductCard = ({ product, handleAddToCart, products, items }) => {
   return (
     <Card className="card">
       <CardMedia
@@ -34,6 +34,7 @@ const ProductCard = ({ product, handleAddToCart }) => {
         variant="contained"
         startIcon={<AddShoppingCartOutlined />}
         fullWidth
+        onClick={() => handleAddToCart(localStorage.getItem("token"), items, products, product._id, 1, {preventDuplicate:true})}
         >
           ADD TO CART
         </Button>
