@@ -36,14 +36,14 @@ const Header = ({ children, hasHiddenAuthButtons }) => {
           Back to explore
         </Button>
       ) : username ? (
-        <div style={{ display: "flex", alignItems: "center" }}>
+        <div style={{ display: "flex", alignItems: "center", justifyContent:"center"}} >
           
           <img
             style={{ marginRight: "0.5rem" }}
             src="avatar.png"
             alt={username}
           />
-          <p>{username}</p>
+          <div>{username}</div>
           <Button className="explore-button" variant="text" onClick={logout}>
             
             LOGOUT

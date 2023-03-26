@@ -15,9 +15,9 @@
 .header-title {
     cursor: pointer;
 }
-/* 
-.explore-button {
-    color: #00a278 !important;
+
+/* .explore-button {
+    color: #00a278;
 } */
 
 @media screen and (min-width: 768px) {

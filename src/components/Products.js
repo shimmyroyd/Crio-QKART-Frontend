@@ -329,6 +329,7 @@ const Products = () => {
       </Header>
 
       <TextField
+        onChange={(e) => debounceSearch(e, debouncetimeout)}
         className="search-mobile"
         size="small"
         fullWidth
@@ -398,6 +399,7 @@ const Products = () => {
           {(username.length > 0) &&  
           <Grid item xs={12} md={3} style={{backgroundColor: "#E9F5E1"}}>
             <Cart
+              isReadOnly={false}
               products={state.data}
               items={generateCartItemsFrom(state.items, state.data)}
               handleQuantity={addToCart}
